@@ -50,7 +50,7 @@ Dino.prototype.compareDiet = function (diet) {
 
 // creater Human object by inheriting Dino
 function Human(name, weight, height, diet) {
-  Dino.call(this, "human", weight, height, diet, [`I am a human and ${diet}`]);
+  Dino.call(this, "human", weight, height, diet, [`I am a human and ${diet}`, `I am ${weight} lbs and ${height} inches`]);
   this.name = name;
 }
 // construct inheritance based on prototype
@@ -161,7 +161,10 @@ document.getElementById("btn").addEventListener("click", () => {
     678
     Thus center idx must be after 3 if we count left-top to right-bottom */
     if (idx == 3) {
-      let humanTile = generateDinoTiles(human.name, human.image, human.facts[0]);
+      // random facts of human
+      let rndIdx = Math.floor(Math.random() * 10) % human.facts.length;
+      let humanFact = human.facts[rndIdx];
+      let humanTile = generateDinoTiles(human.name, human.image, humanFact);
       document.getElementById("grid").appendChild(humanTile);
     }
   }
