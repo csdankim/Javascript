@@ -117,12 +117,10 @@ function generateDinoTiles(species, image, fact) {
   gridTileDiv.appendChild(imageImg);
 
   // <p>fact1</p>
-  if (fact) {
-    let factP = document.createElement("p");
-    factP.innerText = fact;
-    gridTileDiv.appendChild(factP);
-  }
-
+  let factP = document.createElement("p");
+  factP.innerText = fact;
+  gridTileDiv.appendChild(factP);
+  
   return gridTileDiv;
 }
 
